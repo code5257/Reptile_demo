@@ -15,8 +15,13 @@ html = responses.read().decode()
 contents_re = '<div class="content">\n<span>(.*?)</span>'
 """<div class="main-text">(.*?)<div class="likenum">
 """
-content_re = '<div class="main-text"><span>(.*?)</span><div class="likenum">'
+content_re = '<div class="main-text">(.*?)<div class="likenum">'
 contents = re.findall(contents_re,html,re.S)
-# print(contents)
-for content in contents:
+# print(len(contents))
+god_content = re.findall(content_re,html,re.S)
+# print(god_content)
+for i in range(len(contents)):
+    print(contents[i].strip())
+    print()
+for content in god_content:
     print(content.strip())
